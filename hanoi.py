@@ -7,8 +7,9 @@ rods = {"A": list(range(NUMBER_OF_DISKS, 0, -1)), "B": [], "C": []}
 def move(n, source, auxiliary, target):
     # display starting configuration
     print(rods)
-    for move in range(number_of_moves):
-        print(move)
+    for i in range(number_of_moves):
+        if (i + 1) % 3 == 1:
+            print(f"Move {i + 1} allowed between {source} and {target}")
 
 
 # initiate call from source A to target C with auxiliary B
