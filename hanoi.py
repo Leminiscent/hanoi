@@ -7,4 +7,4 @@ rods = {
     'C': []
 }
 def move():
-    pass
+    print(rods)
