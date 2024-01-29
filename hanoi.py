@@ -8,8 +8,11 @@ def move(n, source, auxiliary, target):
     # display starting configuration
     print(rods)
     for i in range(number_of_moves):
-        if (i + 1) % 3 == 1:
-            print(f"Move {i + 1} allowed between {source} and {target}")
+        remainder = (i + 1) % 3
+        if remainder == 1:
+            print(f'Move {i + 1} allowed between {source} and {target}')
+        elif remainder == 2:
+            print(f'Move {i + 1} allowed between {source} and {auxiliary}')
 
 
 # initiate call from source A to target C with auxiliary B
