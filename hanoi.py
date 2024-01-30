@@ -4,6 +4,10 @@ print(number_of_moves)
 rods = {"A": list(range(NUMBER_OF_DISKS, 0, -1)), "B": [], "C": []}
 
 
+def make_allowed_move(rod1, rod2):
+    pass
+
+
 def move(n, source, auxiliary, target):
     # display starting configuration
     print(rods)
@@ -12,7 +16,7 @@ def move(n, source, auxiliary, target):
         if remainder == 1:
             print(f"Move {i + 1} allowed between {source} and {target}")
             forward = False
-            if rods[target] == []:
+            if not rods[target]:
                 forward = True
             elif rods[source] and rods[source][-1] < rods[target][-1]:
                 forward = True
@@ -22,6 +26,7 @@ def move(n, source, auxiliary, target):
             else:
                 print(f"Moving disk {rods[target][-1]} from {target} to {source}")
                 rods[source].append(rods[target].pop())
+
             # display our progress
             print(rods)
         elif remainder == 2:
