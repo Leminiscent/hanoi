@@ -14,6 +14,11 @@ def move(n, source, auxiliary, target):
             forward = False
             if rods[target] == []:
                 forward = True
+            elif rods[source] and rods[source][-1] < rods[target][-1]:
+                forward = True
+            if forward:
+                print(f"Moving disk {rods[source][-1]} from {source} to {target}")
+                rods[target].append(rods[source].pop())
         elif remainder == 2:
             print(f"Move {i + 1} allowed between {source} and {auxiliary}")
         elif remainder == 0:
